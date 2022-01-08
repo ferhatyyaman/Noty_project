@@ -1,0 +1,16 @@
+{% extends 'base.html' %} <!--base.html kalıtım aldırdık-->
+
+{% block title %} Giriş {% endblock title %}  <!--BASLIK-->
+
+{% block content %}
+
+<h2>Log in</h2>
+<form method='post'>
+    {% csrf_token %}     <!--güvenlik için kullandık-->
+    {{form.as_p}}       <!--paragraf gösterimi için-->
+    <button class="btn btn-info btn-lg" type="submit">Giriş</button>  <!--Giriş butonu-->
+    <a class="btn-lg nav-item nav-link" href="#">Şifrenizi mi unuttunuz ?</a>
+
+</form>
+
+{% endblock content %}

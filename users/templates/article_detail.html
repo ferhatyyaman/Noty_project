@@ -1,0 +1,13 @@
+{% extends 'base.html' %}  <!--base.html kalıtım aldık-->
+
+{% block content %}
+<div class="article-entry">
+	<h2>{{ object.title }}</h2>  
+	<p>by {{ object.author }} | {{ object.date }}</p> <!--makale başlığı,yazar,tarih,metin kısmını alıyoruz-->
+	<p>{{ object.body }}</p>
+	</div>
+
+	<p><a href="{% url 'article_edit' article.pk %}">Düzenle</a> |
+		<a href="{% url 'article_delete' article.pk %}">Sil</a></p>
+	<p><a href="{% url 'article_list' %}">Bütün Notlara</a> git.</p> <!--primary key eklemedik list view olduğu için eklemedik-->
+{% endblock content %}

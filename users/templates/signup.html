@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}   <!--crispy_forms_tags yüklüyoruz-->
+
+{% block title %} Kayıt {% endblock title %}
+
+{% block content %}
+
+<h2>Kayıt</h2>
+<form method='post'>
+    {% csrf_token %}    <!--paragraf gösterimi için-->
+    {{form|crispy}}     <!--form da crispy formu kullandık-->
+    <button class="btn btn-info" type="submit">Kaydol</button><!--Kaydol butonu-->
+</form>
+
+{% endblock content %}
