@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %} 
 
 {% block content %}
-	<h1>Yeni Not</h1>
+	<h1>Yorum Yaz</h1>
 	<form action="" method="post">
 		{% csrf_token %}
 		{{form|crispy}} 
-		<button class="btn btn-success ml-2" type="submit">Kaydet</button>
+		<button class="btn btn-success ml-2" type="submit">Yorum Ekle</button>
 	</form>
 {% endblock content %}

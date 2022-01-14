@@ -6,7 +6,7 @@
 			<div class="card-body ps-3">
 
 				<h5 class="lead text-danger">
-					<span class="font-weight-bold">{{ article.title }}</span> &middot;
+					<span class="font-weight-bold"><h2><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></h2></span> &middot;
 				</h5>
 				<p class="mb-4">
 					<span class="text-muted">by {{ article.author }} |
@@ -26,7 +26,7 @@
 
 			
 			<div class="card-footer mb-1">
-				<p>Bir yorum yaz..</p>
+				<p><a href="{% url 'comment_new' article.pk  %}">Bir yorum yaz..</a></p></p>
 				{% for comment in article.comments.all %}
 					<p>
 						<span class="font-weight-bold">{{ comment.author }} &middot; </span>
@@ -48,6 +48,6 @@
 				{% endfor %}
 			</div>
 		</div>
-	<br/>
+	
 	{% endfor %}
 {% endblock content %}

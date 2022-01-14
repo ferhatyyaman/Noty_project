@@ -7,10 +7,10 @@ class CommentInline(admin.TabularInline):
     model=Comment
 
 class ArticleAdmin(admin.ModelAdmin):
-    inlines=[
+    inlines=[   
         CommentInline,
      ]
 
-admin.site.register(Article, ArticleAdmin) #not 
+admin.site.register(Article, ArticleAdmin) #not kayıt ettik
 
-admin.site.register(Comment) #yorum
+admin.site.register(Comment) #yorum kayıt ettik
